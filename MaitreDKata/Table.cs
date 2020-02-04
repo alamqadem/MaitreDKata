@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MaitreDKata
 {
-    public class Table : ITable
+    public abstract class Table : ITable
     {
         private readonly int size;
 
@@ -14,5 +14,7 @@ namespace MaitreDKata
         {
             this.size = size;
         }
+
+        public abstract override string ToString();
     }
 }

@@ -9,7 +9,7 @@ namespace MaitreDKata
         private readonly DateTime date;
         private readonly int quantity;
 
-        public DateTime Date => date;
+        public DateTime DateAndTime => date;
 
         public int Quantity => quantity;
 
@@ -20,6 +20,16 @@ namespace MaitreDKata
 
             this.date = date;
             this.quantity = quantity;
+        }
+
+        public bool CanFit(ITable table)
+        {
+            return this.Quantity <= table.Size;
+        }
+
+        public override string ToString()
+        {
+            return $"[x{Quantity} - {DateAndTime}]";
         }
     }
 }

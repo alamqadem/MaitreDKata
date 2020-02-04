@@ -8,13 +8,18 @@ namespace MaitreDKata
     {
         private readonly int quantity;
 
-        DateTime IReservation.Date => throw new NotImplementedException();
+        DateTime IReservation.DateAndTime => throw new NotImplementedException();
 
         int IReservation.Quantity => quantity;
 
         public QuantityOnlyReservation(int quantity)
         {
             this.quantity = quantity;
+        }
+
+        public bool CanFit(ITable table)
+        {
+            return this.quantity <= table.Size;
         }
     }
 }

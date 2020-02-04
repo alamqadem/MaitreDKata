@@ -14,9 +14,11 @@ namespace MaitreDKataTest
 
             var candidate = new QuantityOnlyReservation(1);
 
-            var tables = new[] { new Table(12) };
+            var tables = new[] { new RectangularTable(12) };
 
-            var actual = new MaitreD().Accept(reservations, candidate, tables);
+            var actual = new BoutiqueRestaurantMaitreD()
+                            .Accept(reservations, candidate, 
+                                    tables, TimeSpan.MaxValue);
 
             Assert.IsTrue(actual);
         }
@@ -28,9 +30,11 @@ namespace MaitreDKataTest
 
             var candidate = new QuantityOnlyReservation(13);
 
-            var tables = new[] { new Table(12) };
+            var tables = new[] { new RectangularTable(12) };
 
-            var actual = new MaitreD().Accept(reservations, candidate, tables);
+            var actual = new BoutiqueRestaurantMaitreD()
+                            .Accept(reservations, candidate, 
+                                    tables, TimeSpan.MaxValue);
 
             Assert.IsFalse(actual);
         }
@@ -42,9 +46,11 @@ namespace MaitreDKataTest
 
             var candidate = new QuantityOnlyReservation(12);
 
-            var tables = new[] { new Table(12) };
+            var tables = new[] { new RectangularTable(12) };
 
-            var actual = new MaitreD().Accept(reservations, candidate, tables);
+            var actual = new BoutiqueRestaurantMaitreD()
+                            .Accept(reservations, candidate, 
+                                    tables, TimeSpan.MaxValue);
 
             Assert.IsTrue(actual);
         }
@@ -58,9 +64,11 @@ namespace MaitreDKataTest
 
             var candidate = new Reservation(3, new DateTime(2023, 09, 14));
 
-            var tables = new[] { new Table(4) };
+            var tables = new[] { new RectangularTable(4) };
 
-            var actual = new MaitreD().Accept(reservations, candidate, tables);
+            var actual = new BoutiqueRestaurantMaitreD()
+                            .Accept(reservations, candidate, 
+                                    tables, TimeSpan.MaxValue);
 
             Assert.IsFalse(actual);
         }
@@ -74,9 +82,11 @@ namespace MaitreDKataTest
 
             var candidate = new Reservation(3, new DateTime(2023, 09, 14));
 
-            var tables = new[] { new Table(10) };
+            var tables = new[] { new RectangularTable(10) };
 
-            var actual = new MaitreD().Accept(reservations, candidate, tables);
+            var actual = new BoutiqueRestaurantMaitreD()
+                            .Accept(reservations, candidate, 
+                                    tables, TimeSpan.MaxValue);
 
             Assert.IsTrue(actual);
         }
@@ -92,9 +102,11 @@ namespace MaitreDKataTest
 
             var candidate = new Reservation(3, new DateTime(2023, 09, 14));
 
-            var tables = new[] { new Table(10) };
+            var tables = new[] { new RectangularTable(10) };
 
-            var actual = new MaitreD().Accept(reservations, candidate, tables);
+            var actual = new BoutiqueRestaurantMaitreD()
+                            .Accept(reservations, candidate, 
+                                    tables, TimeSpan.MaxValue);
 
             Assert.IsFalse(actual);
         }
@@ -108,9 +120,11 @@ namespace MaitreDKataTest
 
             var candidate = new Reservation(3, new DateTime(2023, 09, 14));
 
-            var tables = new[] { new Table(4) };
+            var tables = new[] { new RectangularTable(4) };
 
-            var actual = new MaitreD().Accept(reservations, candidate, tables);
+            var actual = new BoutiqueRestaurantMaitreD()
+                            .Accept(reservations, candidate, 
+                                    tables, TimeSpan.MaxValue);
 
             Assert.IsTrue(actual);
         }

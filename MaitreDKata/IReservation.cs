@@ -6,7 +6,9 @@ namespace MaitreDKata
 {
     public interface IReservation
     {
-        DateTime Date { get; }
+        DateTime DateAndTime { get; }
         int Quantity { get; }
+
+        bool CanFit(ITable table);
     }
 }

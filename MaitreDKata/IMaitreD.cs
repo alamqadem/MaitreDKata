@@ -7,6 +7,6 @@ namespace MaitreDKata
     interface IMaitreD
     {
         bool Accept(IReservation[] reservations, IReservation candidate, 
-                    ITable[] tables);
+                    ITable[] tables, TimeSpan seatingDuration);
     }
 }
